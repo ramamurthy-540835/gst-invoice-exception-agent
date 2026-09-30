@@ -17,4 +17,4 @@ RUN chown -R app:app /app
 USER app
 EXPOSE 8080
 
-CMD ["sh", "-c", "adk api_server --host 0.0.0.0 --port ${PORT} --no-reload --auto_create_session /app"]
+CMD ["sh", "-c", "adk api_server --host 0.0.0.0 --port ${PORT} --no-reload --auto_create_session --with_ui /app"]

@@ -35,7 +35,8 @@ human-approved write action.
 ## Cloud Run deployment
 
 The `cloudbuild.yaml` file builds this container, stores it in Artifact
-Registry, and deploys it to an authenticated Cloud Run service. The deployed
+Registry, and deploys it to a Cloud Run service. The deployed
 service listens on Cloud Run's `PORT` and uses its dedicated runtime service
-account to call Vertex AI. It deliberately has no public ingress permission;
-put it behind IAP, API Gateway, or another approved authentication layer.
+account to call Vertex AI. For a public training demo, the service can grant
+the Cloud Run Invoker role to `allUsers`; restrict it again or put it behind
+IAP, API Gateway, or another approved authentication layer before production.
