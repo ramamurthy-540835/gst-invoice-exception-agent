@@ -1,8 +1,9 @@
-.env
+.git/
 .venv/
 .tmp-pip/
 .adk/
 .adk-web*.log
-.gcloudignore
+**/.adk/
+**/.env
 __pycache__/
 *.py[cod]

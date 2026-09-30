@@ -31,3 +31,11 @@ Investigate invoice INV-1001.
 The starter deliberately has no write tool. Connect real ERP/GST systems using
 read-only service-account credentials before enabling a separately reviewed,
 human-approved write action.
+
+## Cloud Run deployment
+
+The `cloudbuild.yaml` file builds this container, stores it in Artifact
+Registry, and deploys it to an authenticated Cloud Run service. The deployed
+service listens on Cloud Run's `PORT` and uses its dedicated runtime service
+account to call Vertex AI. It deliberately has no public ingress permission;
+put it behind IAP, API Gateway, or another approved authentication layer.
