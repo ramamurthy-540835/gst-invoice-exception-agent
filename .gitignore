@@ -1,0 +1,7 @@
+.env
+.venv/
+.tmp-pip/
+.adk/
+.adk-web*.log
+__pycache__/
+*.py[cod]
